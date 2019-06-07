@@ -1,12 +1,12 @@
 use std::collections::HashSet;
-use std::fs::File;
-use std::io::{BufRead, BufReader};
+
+use crate::utils::readfile;
 
 fn parse_input() -> Vec<i32> {
-  let file = File::open("inputs/day1").unwrap();
-  let lines = BufReader::new(file).lines();
+  let lines = readfile::parse_into_lines("inputs/day1");
   let parsed = lines
-    .map(|result| result.unwrap().parse::<i32>().unwrap())
+    .iter()
+    .map(|line| line.parse::<i32>().unwrap())
     .collect::<Vec<i32>>();
   parsed
 }

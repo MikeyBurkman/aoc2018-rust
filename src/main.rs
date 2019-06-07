@@ -1,7 +1,8 @@
 
-mod day1;
+mod utils { pub mod readfile; }
+mod puzzles { pub mod day1; }
 
 fn main() {
-    day1::puzzle1();
-    day1::puzzle2();
+    puzzles::day1::puzzle1();
+    puzzles::day1::puzzle2();
 }
